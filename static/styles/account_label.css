@@ -1,0 +1,18 @@
+.account-label {
+    display: flex;
+    align-items: center;
+}
+
+.account-label > *:not(:first-child) {
+    margin-left: 0.5em;
+}
+
+.account-label .avatar {
+    width: 2em;
+    height: 2em;
+    border-radius: 1em;
+}
+
+.account-label .username {
+    text-transform: capitalize;
+}

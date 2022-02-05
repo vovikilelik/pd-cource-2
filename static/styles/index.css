@@ -1,0 +1,120 @@
+@import "./account_label.css";
+@import "./article_preview.css";
+@import "./article_content.css";
+@import "./base_list.css";
+@import "./search_options.css";
+@import "./comment_list.css";
+
+* {
+    transition-property: color, opacity;
+    transition-duration: 1s;
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+body {
+    background: #cac4c4;
+}
+
+a {
+    display: block;
+    position: relative;
+
+    color: black;
+
+    text-decoration: none;
+}
+
+a:hover {
+    color: deeppink;
+}
+
+a:hover * {
+    color: deeppink;
+}
+
+a:after {
+    content: '';
+    position: absolute;
+
+    pointer-events: none;
+
+    border: 2px solid deeppink;
+    border-radius: 6px;
+    left: -8px;
+    top: -8px;
+    right: -8px;
+    bottom: -8px;
+
+    opacity: 0;
+
+    transition: all 0.25s;
+}
+
+a:hover:after {
+    opacity: 1;
+}
+
+a.underline {
+    border-bottom: 1px dashed;
+}
+
+input[type="password"],
+input[type="textarea"],
+input:not([type]) {
+    border: 1px solid silver;
+    border-radius: 4px;
+    min-height: 20px;
+    padding: 10px;
+    font-size: 18px;
+    background: whitesmoke;
+}
+
+button {
+    height: 30px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.form {
+      display: flex;
+      margin: auto;
+}
+
+.shadow {
+    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.5);
+}
+
+.layout-horizontal {
+    display: flex;
+    align-items: center;
+}
+
+.layout-horizontal.gap > *:not(:first-child) {
+    margin-left: 0.5em;
+}
+
+.layout-vertical {
+    display: flex;
+    flex-direction: column;
+}
+
+.layout-vertical.gap > *:not(:first-child) {
+    margin-top: 0.5em;
+}
+
+.layout-vertical .max,
+.layout-horizontal .max {
+    flex: 1 1 auto;
+}
+
+.disabled {
+    color: silver;
+}
+
+.effect-fade {
+    opacity: 0.35;
+}

@@ -1,0 +1,13 @@
+.article_preview {
+    display: flex;
+    flex-direction: column;
+}
+
+.article_preview >*:not(:first-child) {
+    margin-top: 1em;
+}
+
+.article_preview .image {
+    max-height: 15em;
+    object-fit: cover;
+}

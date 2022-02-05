@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title%}О сайте{% endblock %}
+
+{% block style%}
+    <style>
+        .form-content {
+            padding: 16px;
+            flex-direction: column;
+            background: white;
+            border-radius: 10px;
+        }
+
+        .form-content > *:not(first-child) {
+            margin-top: 1em;
+        }
+
+        .submit-button {
+            align-self: end;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <form class="form shadow form-content" action="/login" method="post">
+        <input id="username" name="username">
+        <input id="password" name="password" type="password">
+        <button class="submit-button" type="submit">Вход</button>
+    </form>
+{% endblock %}

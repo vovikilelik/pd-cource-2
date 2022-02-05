@@ -1,0 +1,60 @@
+{% extends 'base_content.html' %}
+{% from "macros/article_preview.html" import render_article_preview %}
+{% from "macros/bookmarks_label.html" import render_bookmarks_label %}
+
+{% block title%}Поиск{% endblock %}
+
+{% block back %}
+    <a href="/">
+        <span class="material-icons">
+            arrow_back
+        </span>
+    </a>
+{% endblock %}
+
+{% block caption %}
+    <span>Поиск</span>
+{% endblock %}
+
+{% block options %}
+    <div class="search-options">
+        <input onkeyup="onSearchChanged(this)" oninput="onSearchChanged(this)" >
+        <div id="element-count-indicator" class="indicator"></div>
+    </div>
+    <script>
+        const debounce = new Debounce(1000);
+
+        function onSearchChanged(element) {
+            const container = document.querySelector('.list-content-wrapper');
+
+            container.classList.add('effect-fade');
+
+            debounce.run(sync => {
+                fetchHtml(`/search?content=${element.value}`, { method: 'POST' })
+                    .then(html => {
+                        container.classList.remove('effect-fade');
+                        sync() && (container.innerHTML = html)
+                    });
+            });
+        }
+    </script>
+{% endblock %}
+
+{% block content %}
+    {% for item in items %}
+        {{ render_article_preview(item) }}
+    {% endfor %}
+{% endblock %}
+
+{% block postscript %}
+    <script>
+        const peer = document.querySelector('.list-content-wrapper');
+
+        createMutationObserver(peer, () => {
+            const indicator = document.getElementById('element-count-indicator');
+            indicator.innerText = peer.children.length
+                ? `Найдено: ${peer.children.length}`
+                : 'Ничего не найдено';
+        });
+    </script>
+{% endblock %}

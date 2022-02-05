@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+{% from "macros/account_label.html" import render_account_label %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="{{ url_for('static', filename='scripts/default.js') }}"></script>
+    </head>
+    <style>
+        .body-wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            overflow-y: auto;
+
+            padding: 40px;
+        }
+
+        .main-content-wrapper {
+            display: flex;
+            flex-direction: column;
+            max-width: 100%;
+        }
+
+        .main-content > *:not(:first-child) {
+            margin-top: 20px
+        }
+
+        .header {
+            flex: 0 0 auto;
+            height: 50px;
+
+            display: flex;
+            align-items: center;
+
+            padding: 0 20px;
+
+            background: white;
+            border-bottom: 1px solid gray;
+            box-shadow: 0 0 5px gray;
+        }
+
+        .title {
+            font-size: 150%;
+            flex: 1;
+        }
+    </style>
+    {% block style %}{% endblock %}
+    <body class="body-wrapper">
+        <header class="header">
+            <div class="title">Penguin-Hat</div>
+            <div>
+                {% if user %}
+                    <a href="/logout">{{render_account_label(user)}}</a>
+                {% else %}
+                    <a href="/login">Войти</a>
+                {% endif %}
+            </div>
+        </header>
+        <main class="main-content">
+            <div class="main-content-wrapper">
+                {% block body %}{% endblock %}
+            </div>
+        </main>
+    </body>
+    {% block postscript %}{% endblock %}
+</html>

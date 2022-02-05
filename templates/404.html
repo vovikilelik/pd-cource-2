@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>404</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}">
+    </head>
+    <style>
+        .form-content {
+            flex-direction: column;
+        }
+
+        .form-content > *:not(first-child) {
+            margin-top: 1em;
+        }
+    </style>
+    <body class="content">
+        <div class="form form-content">
+            <h1>404 =(</h1>
+            <p>Нету тут такого...</p>
+            <p><em>{{ message }}</em></p>
+        </div>
+    </body>
+</html>

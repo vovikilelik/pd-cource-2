@@ -1,0 +1,13 @@
+{% macro render_bookmarks_label(bookmarks_count) %}
+    {% if bookmarks_count > 0 %}
+        <div class="layout-horizontal gap">
+            <span class="material-icons">bookmark</span>
+            <span>{{bookmarks_count}}</span>
+        </div>
+    {% else %}
+        <div class="layout-horizontal gap disabled">
+            <span class="material-icons">bookmark</span>
+            <span>{{bookmarks_count}}</span>
+        </div>
+    {% endif %}
+{% endmacro %}

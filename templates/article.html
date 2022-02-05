@@ -1,0 +1,64 @@
+{% extends 'base_content.html' %}
+{% from "macros/article_preview.html" import render_article_preview %}
+{% from "macros/bookmarks_label.html" import render_bookmarks_label %}
+{% from "macros/account_label.html" import render_account_label %}
+
+{% block title%}{{item.title}}{% endblock %}
+
+{% block caption %}
+    <span>Статья</span>
+{% endblock %}
+
+{% block back %}
+    <a href="/">
+        <span class="material-icons">
+            arrow_back
+        </span>
+    </a>
+{% endblock %}
+
+{% block content %}
+    <article class="article-content">
+        <div class="layout-horizontal">
+            <a href="/users/{{item.user.username}}">
+                {{render_account_label(item.user)}}
+            </a>
+            <span class="max"></span>
+        </div>
+        <img class="image" src="{{item.pic}}">
+        <div class="text">{{item.content}}</div>
+        <div class="divider"></div>
+        <div class="layout-horizontal gap">
+            <span class="max">
+                {% if item.comments_count > 0 %}
+                    {{item.comments_count}} комментария
+                {% else %}
+                    <span class="disabled">Нет комментариев</span>
+                {% endif %}
+            </span>
+            <span class="layout-horizontal gap">
+                <span class="material-icons">visibility</span>
+                <span>{{item.views_count}}</span>
+            </span>
+        </div>
+        <div class="comment-list">
+            {% for comment in comments %}
+                <div class="layout-vertical gap">
+                    {{ render_account_label(comment.user) }}
+                    <div class="text">{{ comment.content }}</div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="divider"></div>
+        <form class="comment-add layout-vertical gap">
+            <input name="content" type="textarea">
+            <div class="layout-horizontal gap">
+                <button type="submit">Отправить</button>
+                <span class="max"></span>
+                <a observible=true class="layout-horizontal gap" href="#" onclick="onRequestHtml(this, '/bookmarks/switch?id={{item.id}}', { method: 'PUT' })">
+                    {{ render_bookmarks_label(item.bookmarks_count) }}
+                </a>
+            </div>
+        </form>
+    </article>
+{% endblock %}

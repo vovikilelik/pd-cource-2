@@ -1,0 +1,23 @@
+.article-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.article-content >*:not(:first-child) {
+    margin-top: 1em;
+}
+
+.article-content .image {
+    width: 100%
+    object-fit: cover;
+}
+
+.article-content .text {
+    line-height: 150%;
+}
+
+.article-content .divider {
+    height: 1px;
+    margin: 20px 0;
+    background: lightgray;
+}

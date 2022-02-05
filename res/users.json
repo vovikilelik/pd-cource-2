@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "username": "pegasus",
+    "avatar": "https://randus.org/avatars/w/c1819dbdffffff18.png"
+  },
+  {
+    "id": 2,
+    "username": "unicorn",
+    "avatar": "https://randus.org/avatars/w/c1819dbdffffff18.png"
+  },
+  {
+    "id": 3,
+    "username": "leo",
+    "avatar": "https://randus.org/avatars/w/c1819dbdffffff18.png"
+  },
+  {
+    "id": 4,
+    "username": "johnny",
+    "avatar": "https://randus.org/avatars/m/00183c7e3c382499.png"
+  },
+  {
+    "id": 5,
+    "username": "hank",
+    "avatar": "https://randus.org/avatars/m/383c7e7e3c3c1818.png"
+  },
+  {
+    "id": 6,
+    "username": "larry",
+    "avatar": "https://randus.org/avatars/m/81898dbdbdffdb18.png"
+  }
+]

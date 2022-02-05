@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% from "macros/article_preview.html" import render_article_preview %}
+
+{% block body %}
+    <div class="list-content">
+        <div class="list-header">
+            <span class="left">
+                {% block back %}{% endblock %}
+            </span>
+            <span class="caption">{% block caption %}{% endblock %}</span>
+            <span class="right">
+                {% block forward %}{% endblock %}
+            </span>
+        </div>
+        {% block options %}{% endblock %}
+        <div class="list-content-wrapper">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+{% endblock %}

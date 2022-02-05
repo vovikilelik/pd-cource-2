@@ -1,0 +1,122 @@
+[
+  {
+    "article_id": 1,
+    "user_id": 1,
+    "content": "Очень здорово!",
+    "id": 1
+  },
+  {
+    "article_id": 1,
+    "user_id": 3,
+    "content": ":)",
+    "id": 2
+  },
+  {
+    "article_id": 1,
+    "user_id": 6,
+    "content": "Класс!",
+    "id": 3
+  },
+  {
+    "article_id": 1,
+    "user_id": 4,
+    "content": "Интересно. А где это?",
+    "id": 4
+  },
+  {
+    "article_id": 2,
+    "user_id": 3,
+    "content": "Класс!",
+    "id": 5
+  },
+  {
+    "article_id": 2,
+    "user_id": 4,
+    "content": "Хе хе !",
+    "id": 6
+  },
+  {
+    "article_id": 2,
+    "user_id": 3,
+    "content": "Забавное фото!",
+    "id": 7
+  },
+  {
+    "article_id": 2,
+    "user_id": 6,
+    "content": "Часть вижу такие фото у друзей! Это новый тренд?",
+    "id": 8
+  },
+  {
+    "article_id": 3,
+    "user_id": 1,
+    "content": "Выглядит неплохо )",
+    "id": 9
+  },
+  {
+    "article_id": 3,
+    "user_id": 3,
+    "content": "Каждый раз захожу в ленту и от тебя что то классное!",
+    "id": 10
+  },
+  {
+    "article_id": 3,
+    "user_id": 6,
+    "content": "!!!",
+    "id": 11
+  },
+  {
+    "article_id": 3,
+    "user_id": 4,
+    "content": "Так так, продолжай)",
+    "id": 12
+  },
+  {
+    "article_id": 4,
+    "user_id": 2,
+    "content": "Ухты!",
+    "id": 13
+  },
+  {
+    "article_id": 4,
+    "user_id": 1,
+    "content": "Норм )",
+    "id": 14
+  },
+  {
+    "article_id": 4,
+    "user_id": 6,
+    "content": "Оу!",
+    "id": 15
+  },
+  {
+    "article_id": 4,
+    "user_id": 5,
+    "content": "Интерсно...",
+    "id": 16
+  },
+  {
+    "article_id": 5,
+    "user_id": 2,
+    "content": "Давно тебя тут не было, с возвращением!",
+    "id": 17
+  },
+  {
+    "article_id": 5,
+    "user_id": 5,
+    "content": "Ничего себе, вот это ты молодец!",
+    "id": 18
+  },
+  {
+    "article_id": 6,
+    "user_id": 3,
+    "content": "Класс!",
+    "id": 19
+  },
+  {
+    "article_id": 7,
+    "user_id": 2,
+    "content": "Очень необычная фоторафия! Где это?",
+    "id": 20
+  }
+]

@@ -1,0 +1,5 @@
+{% from "macros/article_preview.html" import render_article_preview %}
+
+{% for item in items %}
+    {{ render_article_preview(item) }}
+{% endfor %}

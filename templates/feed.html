@@ -1,0 +1,39 @@
+{% extends 'base_content.html' %}
+{% from "macros/article_preview.html" import render_article_preview %}
+{% from "macros/bookmarks_label.html" import render_bookmarks_label %}
+
+{% block title%}Главная страница{% endblock %}
+
+{% block back %}
+    <a href="/search">
+        <span class="material-icons">search</span>
+    </a>
+{% endblock %}
+
+{% block caption %}
+    <span>Лента</span>
+{% endblock %}
+
+{% block forward %}
+    <a href="/bookmarks" id="all-bookmarks">
+        {{ render_bookmarks_label(bookmarks_count) }}
+    </a>
+{% endblock %}
+
+{% block content %}
+    {% for item in items %}
+        {{ render_article_preview(item) }}
+    {% endfor %}
+    <script>
+        const peer = document.querySelectorAll('*[observible=true]');
+
+        console.log(peer);
+
+        peer.forEach(p => {
+            createMutationObserver(p, () => {
+                e = document.getElementById('all-bookmarks');
+                fetchHtml('/bookmarks/count').then(html => e.innerHTML = html)
+            });
+        });
+    </script>
+{% endblock %}
