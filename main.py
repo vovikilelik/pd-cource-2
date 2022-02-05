@@ -191,5 +191,6 @@ def tags_view():
 
 
 app.secret_key = 'The Secret Key'
-app.run(debug=True)
 
+if __name__ == '__name__':
+    app.run()
