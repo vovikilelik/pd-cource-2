@@ -2,6 +2,7 @@
 {% from "macros/article_preview.html" import render_article_preview %}
 {% from "macros/bookmarks_label.html" import render_bookmarks_label %}
 {% from "macros/account_label.html" import render_account_label %}
+{% from "macros/tags.html" import render_tags %}
 
 {% block title%}{{item.title}}{% endblock %}
 
@@ -26,7 +27,8 @@
             <span class="max"></span>
         </div>
         <img class="image" src="{{item.pic}}">
-        <div class="text">{{item.content}}</div>
+        <div class="layout-horizontal gap">{{ render_tags(item.tags) }}</div>
+        <div class="text">{{ item.content }}</div>
         <div class="divider"></div>
         <div class="layout-horizontal gap">
             <span class="max">

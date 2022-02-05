@@ -1,0 +1,7 @@
+{% macro render_tags(tag_list) %}
+    {% for tag in tag_list %}
+        <a href="/tags?tag={{tag|replace('#', '%23')}}" class="tag-link">
+            {{ tag }}
+        </a>
+    {% endfor %}
+{% endmacro %}

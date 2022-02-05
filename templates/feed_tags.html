@@ -1,0 +1,14 @@
+{% extends 'feed.html' %}
+{% from "macros/article_preview.html" import render_article_preview %}
+
+{% block title%}{{user.username}} - лента{% endblock %}
+
+{% block back %}
+    <a href="/">
+        <span class="material-icons">
+            arrow_back
+        </span>
+    </a>
+{% endblock %}
+
+{% block forward %}{% endblock %}

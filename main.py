@@ -49,7 +49,11 @@ def render_template_or_login(template_name, user=None, **args):
 
 @app.route('/')
 def index():
-    return render_template_or_login('feed.html', items=get_post_list(articles.get_raw_list(), users, bookmarks, comments))
+    return render_template_or_login(
+        'feed.html',
+        items=get_post_list(articles.get_raw_list(), users, bookmarks, comments),
+        title='Лента'
+    )
 
 
 @app.route('/login', methods=['GET'])
@@ -134,7 +138,11 @@ def user_feed_view(username):
         return render_template('404.html')
 
     article_list = articles.search_records(user_id=user.id)
-    return render_template_or_login('feed_user.html', items=get_post_list(article_list, users, bookmarks, comments), user=user)
+    return render_template_or_login(
+        'feed_user.html',
+        items=get_post_list(article_list, users, bookmarks, comments),
+        user=user
+    )
 
 
 @app.route('/posts/<int:post_id>')
@@ -164,6 +172,22 @@ def search_view():
     article_list = articles.filter_by_query(**request.args)
 
     return render_template_or_login('search.html', items=get_post_list(article_list, users, bookmarks, comments))
+
+
+@app.route('/tags')
+def tags_view():
+    tag_name = request.args.get('tag')
+    print('tag_name', tag_name, request.args)
+    if not tag_name:
+        return redirect('/')
+
+    article_list = articles.filter_by_query(content=tag_name)
+
+    return render_template_or_login(
+        'feed_tags.html',
+        items=get_post_list(article_list, users, bookmarks, comments),
+        title=tag_name
+    )
 
 
 app.secret_key = 'The Secret Key'

@@ -111,10 +111,19 @@ button {
     flex: 1 1 auto;
 }
 
+.layout-vertical.wrap,
+.layout-horizontal.wrap {
+    flex-wrap: wrap;
+}
+
 .disabled {
     color: silver;
 }
 
 .effect-fade {
     opacity: 0.35;
+}
+
+.tag-link {
+    color: lightcoral;
 }

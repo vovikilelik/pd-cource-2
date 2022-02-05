@@ -1,6 +1,10 @@
 from core.entity.entity import Entity
 
 
+def get_tags_from_text(text):
+    return list(set([tag for tag in text.split(' ') if tag.startswith('#')]))
+
+
 class Article(Entity):
 
     @property
@@ -30,3 +34,7 @@ class Article(Entity):
     @property
     def likes_count(self):
         return self._record['likes_count']
+
+    @property
+    def tags(self):
+        return get_tags_from_text(self.content)

@@ -1,5 +1,6 @@
 {% from "macros/account_label.html" import render_account_label %}
 {% from "macros/bookmarks_label.html" import render_bookmarks_label %}
+{% from "macros/tags.html" import render_tags %}
 {% macro render_article_preview(item) %}
     <article class="article_preview">
         <div class="layout-horizontal">
@@ -9,7 +10,8 @@
             <span class="max"></span>
         </div>
         <img class="image" src="{{ item.pic }}">
-        <div>{{item.content_preview}}</div>
+        <div class="layout-horizontal gap wrap">{{ render_tags(item.tags) }}</div>
+        <div>{{ item.content_preview }}</div>
         <div class="layout-horizontal gap">
             <span class="max">
                 {% if item.comments_count > 0 %}
